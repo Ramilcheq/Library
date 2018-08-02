@@ -1,7 +1,7 @@
-package net.proselyte.bookmanager.service;
+package ru.bookmanager.service;
 
-import net.proselyte.bookmanager.dao.BookDao;
-import net.proselyte.bookmanager.model.Book;
+import ru.bookmanager.dao.BookDao;
+import ru.bookmanager.model.Book;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

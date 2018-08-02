@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="net.proselyte.bookmanager"/>
+    <context:component-scan base-package="ru.bookmanager"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -29,7 +29,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>net.proselyte.bookmanager.model.Book</value>
+                <value>ru.bookmanager.model.Book</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -42,15 +42,15 @@
     </bean>
 
     <!--BookDao and BookService beans-->
-    <bean id="bookDao" class="net.proselyte.bookmanager.dao.BookDaoImpl">
+    <bean id="bookDao" class="ru.bookmanager.dao.BookDaoImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="bookService" class="net.proselyte.bookmanager.service.BookServiceImpl">
+    <bean id="bookService" class="ru.bookmanager.service.BookServiceImpl">
         <property name="bookDao" ref="bookDao"/>
     </bean>
 
-    <context:component-scan base-package="net.proselyte.bookmanager"/>
+    <context:component-scan base-package="ru.bookmanager"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

@@ -1,6 +1,6 @@
-package net.proselyte.bookmanager.dao;
+package ru.bookmanager.dao;
 
-import net.proselyte.bookmanager.model.Book;
+import ru.bookmanager.model.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

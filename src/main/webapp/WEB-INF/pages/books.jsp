@@ -173,7 +173,6 @@
         <c:forEach items="${listBooks}" var="book">
             <tr>
                 <td>${book.id}</td>
-                <!--td><a href="/bookdata/${book.id}" target="_blank">${book.bookTitle}</a></td-->
                 <td>${book.bookTitle}</td>
                 <td>${book.bookDescription}</td>
                 <td>${book.bookAuthor}</td>

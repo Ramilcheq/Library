@@ -1,7 +1,7 @@
-package net.proselyte.bookmanager.controller;
+package ru.bookmanager.controller;
 
-import net.proselyte.bookmanager.model.Book;
-import net.proselyte.bookmanager.service.BookService;
+import ru.bookmanager.model.Book;
+import ru.bookmanager.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.support.PagedListHolder;
@@ -18,7 +18,6 @@ public class BookController {
     public void setBookService(BookService bookService) {
         this.bookService = bookService;
     }
-
 
 
     @RequestMapping(value = "/books/add/{page}", method = RequestMethod.POST)
@@ -70,7 +69,6 @@ public class BookController {
     public String listBooks1(@RequestParam(required = false) Integer page,
                              Model model) {
         model.addAttribute("book", new Book());
-        //model.addAttribute("listBooks", this.bookService.listBooks());
 
         PagedListHolder<Book> pagedBooks = new PagedListHolder<>(this.bookService.listBooks(0));
         pagedBooks.setPageSize(10);
@@ -92,10 +90,9 @@ public class BookController {
         return "books";
     }
 
-    @RequestMapping(value = "search")//, method = RequestMethod.POST)
+    @RequestMapping(value = "search")
     public String search(@ModelAttribute("book") Book book, Model model,
                          @RequestParam(required = false) Integer page) {
-        //model.addAttribute("listBooks", this.bookService.listBooks(book));
 
         PagedListHolder<Book> pagedBooks = new PagedListHolder<>(this.bookService.listBooks(book));
         pagedBooks.setPageSize(10);
@@ -113,7 +110,7 @@ public class BookController {
         }
 
         model.addAttribute("page", page);
-        return "search";//redirect:/search?page=" + page;
+        return "search";
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)

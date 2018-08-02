@@ -1,6 +1,6 @@
-package net.proselyte.bookmanager.dao;
+package ru.bookmanager.dao;
 
-import net.proselyte.bookmanager.model.Book;
+import ru.bookmanager.model.Book;
 
 import java.util.List;
 
@@ -8,8 +8,6 @@ public interface BookDao {
     public void addBook(Book book);
 
     public void readBook(int id);
-
-    //public void searchBook(Book book);
 
     public void updateBook(Book book);
 

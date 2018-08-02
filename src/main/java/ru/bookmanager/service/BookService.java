@@ -1,6 +1,6 @@
-package net.proselyte.bookmanager.service;
+package ru.bookmanager.service;
 
-import net.proselyte.bookmanager.model.Book;
+import ru.bookmanager.model.Book;
 
 import java.util.List;
 
